@@ -8,10 +8,6 @@ export async function PATCH(
   const body = await request.json();
 
   const postId = params.id;
-
-  console.log(body);
-  console.log(postId);
-
   if (!postId) {
     return NextResponse.json({ error: "Post ID is missing" }, { status: 400 });
   }
