@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 import Posts from "./components/Posts";
-
+export const dynamic = "force-dynamic";
 const getData = async () => {
   const feed = await prisma.post.findMany({
     where: { published: true },
