@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-interface DeleteParams {
+export interface DeleteParams {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   params: any;
 }
