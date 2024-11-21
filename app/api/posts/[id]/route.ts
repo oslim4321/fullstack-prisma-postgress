@@ -2,7 +2,8 @@ import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 interface DeleteParams {
-  params: { id: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params: any;
 }
 
 export async function DELETE(request: NextRequest, { params }: DeleteParams) {
