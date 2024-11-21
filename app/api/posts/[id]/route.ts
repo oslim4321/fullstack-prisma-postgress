@@ -3,10 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Record<string, string | string[]> }
+  { params }: { params: { id: string } }
 ) {
-  //   console.log(params, "params");
-
   const postId = params.id;
 
   if (!postId) {
@@ -14,7 +12,7 @@ export async function DELETE(
   }
 
   const post = await prisma.post.delete({
-    where: { id: postId as string },
+    where: { id: postId },
   });
 
   return NextResponse.json(post);
